@@ -12,6 +12,30 @@ class App extends Component {
     }
   }
 
+  addRow = () => {
+
+  }
+
+  addColumn = () => {
+
+  }
+
+  removeRow = () => {
+
+  }
+
+  removeColumn = () => {
+
+  }
+
+  chooseColor = (e) => {
+
+  }
+
+  handleClick = (e) => {
+    
+  }
+
   render() {
     return (
       <>
@@ -44,7 +68,12 @@ class App extends Component {
           </div>
 
           <div>
-            {/* Insert Table */}
+            <Table
+              cellColor={this.state.cellColor}
+              numRows={this.state.numRows}
+              numColumns={this.state.numColumns}
+              handleClick={this.handleClick}
+            />
           </div>
         </div>
       </>
