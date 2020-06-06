@@ -1,7 +1,17 @@
 import React, { Component } from 'react';
+import Table from "./components/Table";
 import './App.css';
 
 class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      cellColor: "#FFFFFF",
+      numRows: 5,
+      numColumns: 4,
+    }
+  }
+
   render() {
     return (
       <>
