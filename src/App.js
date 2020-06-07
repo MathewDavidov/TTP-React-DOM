@@ -7,8 +7,8 @@ class App extends Component {
     super(props);
     this.state = {
       cellColor: "#FFFFFF",
-      numRows: 5,
-      numColumns: 4,
+      numRows: 10,
+      numColumns: 10,
     }
   }
 
@@ -28,11 +28,11 @@ class App extends Component {
 
   }
 
-  chooseColor = (e) => {
-
+  chooseColor = (event) => {
+    
   }
 
-  handleClick = (e) => {
+  handleClick = (event) => {
     
   }
 
@@ -58,7 +58,7 @@ class App extends Component {
                 <label htmlFor="colors">Choose a color:</label>
 
                 <select name="colors" className="colors" value={this.state.cellColor} onChange={this.chooseColor}>
-                  <option value="#FFFFFF">Color</option>
+                  <option value="#FFFFFF">Color (White)</option>
                   <option value="#FF0000">Red</option>
                   <option value="#00FF00">Green</option>
                   <option value="#0000FF">Blue</option>
