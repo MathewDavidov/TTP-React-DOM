@@ -1,7 +1,41 @@
 import React, { Component } from 'react';
+import Table from "./components/Table";
 import './App.css';
 
 class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      cellColor: "#FFFFFF",
+      numRows: 10,
+      numColumns: 10,
+    }
+  }
+
+  addRow = () => {
+
+  }
+
+  addColumn = () => {
+
+  }
+
+  removeRow = () => {
+
+  }
+
+  removeColumn = () => {
+
+  }
+
+  chooseColor = (event) => {
+    
+  }
+
+  handleClick = (event) => {
+    
+  }
+
   render() {
     return (
       <>
@@ -24,7 +58,7 @@ class App extends Component {
                 <label htmlFor="colors">Choose a color:</label>
 
                 <select name="colors" className="colors" value={this.state.cellColor} onChange={this.chooseColor}>
-                  <option value="#FFFFFF">Color</option>
+                  <option value="#FFFFFF">Color (White)</option>
                   <option value="#FF0000">Red</option>
                   <option value="#00FF00">Green</option>
                   <option value="#0000FF">Blue</option>
@@ -34,7 +68,12 @@ class App extends Component {
           </div>
 
           <div>
-            {/* Insert Table */}
+            <Table
+              cellColor={this.state.cellColor}
+              numRows={this.state.numRows}
+              numColumns={this.state.numColumns}
+              handleClick={this.handleClick}
+            />
           </div>
         </div>
       </>
