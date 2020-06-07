@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Table from "./components/Table";
+import { Table } from "./components";
 import './App.css';
 
 class App extends Component {
@@ -13,27 +13,42 @@ class App extends Component {
   }
 
   addRow = () => {
-
+    this.setState({
+      numRows: this.state.numRows + 1,
+    });
   }
 
   addColumn = () => {
-
+    this.setState({
+      numColumns: this.state.numColumns + 1,
+    });
   }
 
   removeRow = () => {
-
+    if (this.state.numRows > 1) {
+      console.log("in remove row");
+      this.setState({
+        numRows: this.state.numRows - 1,
+      });
+    }
   }
 
   removeColumn = () => {
-
+    if (this.state.numColumns > 1) {
+      this.setState({
+        numColumns: this.state.numColumns - 1,
+      });
+    }
   }
 
   chooseColor = (event) => {
-    
+    this.setState({
+      cellColor: event.target.value
+    })
   }
 
   handleClick = (event) => {
-    
+    event.target.style.backgroundColor = this.state.cellColor;
   }
 
   render() {
@@ -48,10 +63,6 @@ class App extends Component {
                     <button type="button" className="btn btn-primary" onClick={this.addRow}>Add Row</button>
                     <button type="button" className="btn btn-primary" onClick={this.addColumn}>Add Column</button>
                   </div>
-                  <div className="btn-group mr-2" role="group" aria-label="Second group">
-                    <button type="button" className="btn btn-primary" onClick={this.removeRow}>Remove Row</button>
-                    <button type="button" className="btn btn-primary" onClick={this.removeColumn}>Remove Column</button>
-                  </div>
                 </div>
               </div>
               <div className="col">  
@@ -63,6 +74,14 @@ class App extends Component {
                   <option value="#00FF00">Green</option>
                   <option value="#0000FF">Blue</option>
                 </select>
+              </div>
+              <div className="col">
+                <div className="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
+                  <div className="btn-group mr-2" role="group" aria-label="Second group">
+                    <button type="button" className="btn btn-primary" onClick={this.removeRow}>Remove Row</button>
+                    <button type="button" className="btn btn-primary" onClick={this.removeColumn}>Remove Column</button>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
