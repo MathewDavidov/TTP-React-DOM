@@ -26,7 +26,6 @@ class App extends Component {
 
   removeRow = () => {
     if (this.state.numRows > 1) {
-      console.log("in remove row");
       this.setState({
         numRows: this.state.numRows - 1,
       });
