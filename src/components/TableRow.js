@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import TableCell from "./TableCell";
 
-const TableRow = ({ cellColor, numColumns }) => {
+const TableRow = ({ cellColor, numColumns, handleClick }) => {
     let tableColumns = [];
 
     for (let i = 0; i < numColumns; i++) {
@@ -9,6 +9,7 @@ const TableRow = ({ cellColor, numColumns }) => {
             <TableCell 
                 key={i}
                 cellColor={cellColor}
+                handleClick={handleClick}
             />
         )
     }
